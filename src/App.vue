@@ -2,7 +2,7 @@
 <template>
     <div class = "app">
         <post-form @createPostEvent="createPost"/>
-        <post-list v-bind:posts="posts"/>
+        <post-list v-bind:posts="posts" @remove="removePost"/>
     </div>
 </template>
 
@@ -29,6 +29,9 @@
         createPost(post){
             console.log(post)
             this.posts.push(post);
+        },
+        removePost(post){
+            this.posts = this.posts.filter(p => p.id !== post.id) 
         }
     },
 }
