@@ -30,14 +30,14 @@ export default{
         }
     },
     methods: {
-    createPost(){
-        this.post.id = Date.now();
-        this.$emit('createPostEvent', this.post);
-        this.post = {
-            title:'',
-            body: ''
+        createPost(){
+            this.post.id = Date.now();
+            this.$emit('createPostEvent', this.post);
+            this.post = {
+                title:'',
+                body: ''    
+            }
         }
-    }
     }
 }
 </script>
