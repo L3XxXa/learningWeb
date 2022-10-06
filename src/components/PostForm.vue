@@ -14,9 +14,8 @@
                 type = "text"
                 placeholder="Body"/>
         </form>
-        <my-button @click="createPost">Post!!!</my-button>
+        <my-button @click="createPost" style="margin-top: 15px">Post!!!</my-button>
     </div>
-    <div class = "empty"></div>
 </template>
 
 <script>
@@ -50,6 +49,7 @@ export default{
 
     h4{
         font-size: 40px;
+        text-align: center;
     }
     .empty{
         margin-top: 60px;

@@ -18,10 +18,10 @@
 
 <style scoped>
     .input{
-        padding: 15px;
-        border: 3px solid blueviolet;
-        margin-top: 10px;
-        font-size: 20px;
-        width: 100%;
+      padding: 15px;
+      border: 3px solid blueviolet;
+      margin-top: 10px;
+      font-size: 20px;
+      width: 100%;
     }
 </style>
