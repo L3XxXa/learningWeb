@@ -4,9 +4,6 @@
         <my-button @click="showDialog">
             Create post!!!
         </my-button >
-        <my-button style="margin-left: 15px" @click="fetchPosts">
-            Получить посты с jsonplaceholder
-        </my-button>
         <my-dialog v-model:show="dialogVisible">
             <post-form @createPostEvent="createPost"/>
         </my-dialog>
