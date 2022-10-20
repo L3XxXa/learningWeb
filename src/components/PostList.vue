@@ -1,6 +1,6 @@
 <template>
     <div v-show="posts.length>0">
-        <h4>List of posts</h4>
+        <h4 style = "margin-top: 15px">List of posts</h4>
         <post-item 
         v-for="post in posts" 
         :post="post"
@@ -8,7 +8,7 @@
         @remove="$emit('remove', post)"
         />        
     </div>
-    <h2 v-show="posts.length === 0">No posts</h2>
+    <h2 v-show="posts.length === 0" style="margin-top: 15px;">No posts</h2>
 </template>
 
 <script>

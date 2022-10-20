@@ -3,18 +3,23 @@
     <div class = "app">
         <my-button @click="showDialog">
             Create post!!!
+        </my-button >
+        <my-button style="margin-left: 15px" @click="fetchPosts">
+            Получить посты с jsonplaceholder
         </my-button>
         <my-dialog v-model:show="dialogVisible">
             <post-form @createPostEvent="createPost"/>
         </my-dialog>
         <post-list v-bind:posts="posts" @remove="removePost"/>
+
     </div>
 </template>
 
 <script>
     import PostForm from "@/components/PostForm.vue";
     import PostList from "@/components/PostList.vue";
-import MyButton from "./components/UI/MyButton.vue";
+    import MyButton from "./components/UI/MyButton.vue";
+    import axios from "axios";
 
     export default{
         components: {
@@ -26,9 +31,6 @@ import MyButton from "./components/UI/MyButton.vue";
     data(){
         return{
             posts:[
-                {id: 1, title: "Hello, world", body: "Lorem ipsum dolor sit amet."},
-                {id: 2, title: "Hello, another world", body: "consectetur adipiscing elit."},
-                {id: 3, title: "Hello, final world", body: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
             ],
             dialogVisible: false,
         }
@@ -44,6 +46,14 @@ import MyButton from "./components/UI/MyButton.vue";
         },
         showDialog(){
             this.dialogVisible = true
+        },
+        async fetchPosts(){
+            try{
+                const response = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10");
+                this.posts = response.data;
+            } catch(e){
+                alert(e.body)
+            }
         }
     },
 }
